@@ -1,0 +1,6 @@
+README.md
+setup.py
+grafo.egg-info/PKG-INFO
+grafo.egg-info/SOURCES.txt
+grafo.egg-info/dependency_links.txt
+grafo.egg-info/top_level.txt

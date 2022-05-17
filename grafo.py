@@ -1,6 +1,3 @@
-# from collections import defaultdict
-
-
 class Grafo(object):
     """Implementação básica de um grafo."""
 
@@ -17,7 +14,7 @@ class Grafo(object):
         """Retorna a lista de arestas do grafo."""
         return [(k, v) for k in self.grafo.keys() for v in self.grafo[k]]
 
-    def adiciona_arestas(self, arestas: list[tuple]):
+    def adiciona_arestas(self, arestas: 'list[tuple]'):
         """Adiciona arestas ao grafo."""
         for u, v in arestas:
             self.adiciona_arco(u, v)
@@ -39,7 +36,14 @@ class Grafo(object):
         return len(self.grafo)
 
     def __str__(self):
-        return f"{self.__class__.__name__}: {self.grafo}"
+        string = ""
+        for node in self.grafo:
+            string += f" {node} aponta para "
+            apontadores = []
+            for related_node in self.grafo[node]:
+                   apontadores.append(related_node)
+            string += f"{str(apontadores)}"
+        return f"{self.__class__.__name__}:{string}"
 
     def __getitem__(self, v):
         return self.grafo[v]
