@@ -45,7 +45,7 @@ class Grafo(object):
             string += f" {node} aponta para "
             apontadores = []
             for related_node in self.grafo[node]:
-                   apontadores.append(related_node)
+                apontadores.append(related_node)
             string += f"{str(apontadores)}"
         return f"{self.__class__.__name__}:{string}"
 
