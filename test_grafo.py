@@ -27,7 +27,7 @@ def test_if_grafo_can_identify_arestas():
 def test_if_grafo_can_transcript_to_string():
     expect_return = "Grafo: A aponta para ['B', 'C', 'D'] B aponta para ['A', 'D'] C aponta para ['A'] D aponta para ['B', 'A']"
     string_grafo = str(grafo)
-    assert string_grafo in expect_return
+    assert string_grafo == expect_return
 
 
 def test_if_grafo_has_len():
@@ -43,3 +43,5 @@ def test_error_case():
     list_of_nodes = [("B", "D", "E")]
     with pytest.raises(ValueError):
         grafo = Grafo(list_of_nodes)
+
+print(["A", "B", "C", "D"] == ["A", "B", "D", "C"])
